@@ -14,5 +14,7 @@ public interface UsuarioInterfacesDAO {
 		public int actualizarUsuario(Usuario u);
 		public ArrayList<Usuario> listarUsuarios();
 		public ArrayList<ReporteUsuario> listarXTipo(int tipo);
+		//Validar el acceso al sistema
+		public Usuario validarAcceso(String usr,String clav);
 
 }

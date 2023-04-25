@@ -265,5 +265,50 @@ public class GestionUsuarioDAO {
 			}
 		}
 		return  lista;
+	}
+
+	public Usuario validarAcceso(String usr, String clav){
+		Usuario usuario=null;
+		Connection con=null;
+		PreparedStatement pstm= null;
+		ResultSet res=null;
+
+		try{
+			//1 Conectarse a la base de datos
+			con=MySQLConexion8.getConexion();
+			//2
+			String sql = "{call usp_validarAcceso(?,?)}";
+			//3
+			pstm = con.prepareStatement(sql);
+			// 4
+			pstm.setString(1,usr);
+			pstm.setString(2,clav);
+			//5
+			res = pstm.executeQuery();
+			//6
+			if(res.next()){
+				usuario = new Usuario(	res.getInt(1),
+										res.getString(2),
+										res.getString(3),
+										res.getString(4),
+										res.getString(5),
+										res.getString(6),
+										res.getInt(7),
+										res.getInt(8));
+			}
+		}catch (Exception e){
+			System.out.println("Error en el procedimiento almacenado validar acceso"+e.getMessage());
+		}finally {
+			try {
+				if(pstm != null)pstm.close();
+				if(res != null)res.close();
+				if(con != null)con.close();
+
+			}catch (SQLException e2){
+				System.out.println("Error al cerrar la base de datos");
+			}
 		}
+
+		return  usuario;
+	}
 }
