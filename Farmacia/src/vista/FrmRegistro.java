@@ -154,7 +154,7 @@ public class FrmRegistro extends JFrame implements ActionListener, MouseListener
 		txtFecha.setBounds(707, 178, 130, 20);
 		contentPane.add(txtFecha);
 		
-		btnEliminar = new JButton("");
+		btnEliminar = new JButton("Eliminar");
 		//btnEliminar.setIcon(new ImageIcon(FrmRegistro.class.getResource("/img/eliminar.png")));
 		btnEliminar.addActionListener(this);
 		btnEliminar.setBounds(707, 274, 89, 23);
