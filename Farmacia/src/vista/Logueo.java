@@ -70,12 +70,12 @@ public class Logueo extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblUsuario = new JLabel("Usuario :");
+		JLabel lblUsuario = new JLabel("USUARIO: ");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblUsuario.setBounds(114, 36, 96, 20);
 		contentPane.add(lblUsuario);
 
-		JLabel lblClave = new JLabel("Contrase\u00F1a:");
+		JLabel lblClave = new JLabel("CONTRASEÑA: ");
 		lblClave.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblClave.setBounds(114, 83, 96, 20);
 		contentPane.add(lblClave);
